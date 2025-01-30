@@ -1,25 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:sangamone/screen8.dart';
 
-class Screen7 extends StatelessWidget {
-  const Screen7({super.key});
+class Screen8 extends StatelessWidget {
+  const Screen8({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Chessboard(),
+      home: Chessboard1(),
     );
   }
 }
 
-class Chessboard extends StatefulWidget {
-  const Chessboard({super.key});
+class Chessboard1 extends StatefulWidget {
+  const Chessboard1({super.key});
 
   @override
-  State<Chessboard> createState() => _ChessboardState();
+  State<Chessboard1> createState() => _ChessboardState();
 }
 
-class _ChessboardState extends State<Chessboard> {
+class _ChessboardState extends State<Chessboard1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +32,8 @@ class _ChessboardState extends State<Chessboard> {
           return Container(
             child: Center(child: Text("$row $column")),
             decoration: BoxDecoration(
-              border: Border.all(color: Colors.black,width: 2)
+                border: Border.all(color: Colors.black,width: 2),
+              color: (column+row)%2==0?Colors.white:Colors.black,
             ),
           );
         }),
