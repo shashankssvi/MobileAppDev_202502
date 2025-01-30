@@ -1,6 +1,7 @@
 # sangamone
 
-A new Flutter project.
+> Packages Used:
+> 1. https://pub.dev/packages/just_audio/versions
 
 ## Getting Started
 
