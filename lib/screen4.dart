@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sangamone/screen5.dart';
 
 class Screen4 extends StatelessWidget {
   const Screen4({super.key});
@@ -50,6 +51,10 @@ class _CitesState extends State<Cites> {
           });
         }
       ),
+      floatingActionButton: FloatingActionButton(onPressed: (){
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>Emicalculator()));
+      },
+      child: Icon(Icons.arrow_forward_sharp),),
     );
   }
 }
