@@ -34,7 +34,7 @@ class _DatetimeState extends State<Datetime> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Quiz 1"),
+        title: Text("Time in different cites"),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
