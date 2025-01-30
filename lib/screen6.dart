@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sangamone/screen7.dart';
 
 class Screen6 extends StatelessWidget {
   const Screen6({super.key});
@@ -85,6 +86,10 @@ class _ColorgenState extends State<Colorgen> {
             color: Color.fromRGBO(red,green,blue, 1),)
         ],
       ),
+      floatingActionButton: FloatingActionButton(onPressed: (){
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>Chessboard()));
+      },
+        child: Icon(Icons.arrow_forward_sharp),),
     );
   }
 }
