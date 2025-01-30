@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sangamone/screen6.dart';
 
 class Screen5 extends StatelessWidget {
   const Screen5({super.key});
@@ -95,7 +96,11 @@ class _EmicalculatorState extends State<Emicalculator> {
             Text("EMI is:- $emi",style: TextStyle(fontSize: 30),),
           ],
         ),
-      ),
+      ),floatingActionButton: FloatingActionButton(onPressed: (){
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>Colorgen()));
+    },
+      child: Icon(Icons.arrow_forward_sharp),),
+
     );
   }
 }
