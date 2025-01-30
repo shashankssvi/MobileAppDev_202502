@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sangamone/screen4.dart';
 
 
 void main() {
@@ -24,10 +25,6 @@ class Datetime extends StatefulWidget {
 }
 
 class _DatetimeState extends State<Datetime> {
-
-
-
-
 
   Stream st = Stream.periodic(Duration(seconds: 1));
   @override
@@ -57,6 +54,11 @@ class _DatetimeState extends State<Datetime> {
           )
         ],
       ),
+      floatingActionButton: FloatingActionButton(child: Icon(Icons.arrow_forward_sharp),
+          onPressed: (){
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>Cites()));
+
+      }),
     );
   }
 }
