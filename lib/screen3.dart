@@ -25,6 +25,10 @@ class Datetime extends StatefulWidget {
 
 class _DatetimeState extends State<Datetime> {
 
+
+
+
+
   Stream st = Stream.periodic(Duration(seconds: 1));
   @override
   Widget build(BuildContext context) {
@@ -36,12 +40,18 @@ class _DatetimeState extends State<Datetime> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            child: Center(child: Text("${DateTime.now().day}-${DateTime.now().month}-${DateTime.now().year}",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),)),
-          ),
-          Container(
               child: Center(
                 child: StreamBuilder(stream: st, builder: (context,snapshot){
-                  return Text("${DateTime.now().hour}:${DateTime.now().minute}:${DateTime.now().second}",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),);
+                  DateTime dt1 = DateTime.now().toUtc();
+                  DateTime dt2 = DateTime.now();
+                  return Column(
+                    children: [
+                      Text("UTC - ${dt1.year}:${dt1.month}:${dt1.day}",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
+                      Text("${dt1.hour}:${dt1.minute}:${dt1.second}\n",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
+                      Text("Local - ${dt2.year}:${dt2.month}:${dt2.day}",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
+                      Text("${dt2.hour}:${dt2.minute}:${dt2.second}",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
+                    ],
+                  );
                 }),
               )
           )
